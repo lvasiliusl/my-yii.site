@@ -26,7 +26,7 @@ class SiteController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['logout', 'add-post', 'index', 'posts-list'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -95,4 +95,24 @@ class SiteController extends Controller
 
         return $this->goHome();
     }
+
+    /**
+     * Displays add post page.
+     *
+     *
+     */
+     public function actionAddPost()
+     {
+       return $this->render('add-post');
+     }
+
+     /**
+      * Displays posts list.
+      *
+      *
+      */
+      public function actionPostsList()
+      {
+        return $this->render('posts-list');
+      }
 }
